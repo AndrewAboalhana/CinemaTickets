@@ -35,9 +35,9 @@ fun ChairItem(rotation: Float) {
             modifier = Modifier
                 .size(40.dp)
                 .constrainAs(chair1) {
-                    bottom.linkTo(container.bottom, margin = 4.dp)
-                    start.linkTo(container.start, margin = 4.dp)
-                    end.linkTo(chair2.start, margin = 4.dp)
+                    bottom.linkTo(container.bottom)
+                    start.linkTo(container.start,margin = 24.dp)
+
                 }
                 .clickable {
                     chair1Color = when (chair1Color) {
@@ -49,7 +49,7 @@ fun ChairItem(rotation: Float) {
                         }
                     }
                     containerColor = if (chair1Color == Primary || chair2Color == Primary) {
-                       Primary
+                        Primary
                     } else {
                         Color.Gray
                     }
@@ -63,9 +63,8 @@ fun ChairItem(rotation: Float) {
             modifier = Modifier
                 .size(40.dp)
                 .constrainAs(chair2) {
-                    bottom.linkTo(container.bottom, margin = 4.dp)
-                    end.linkTo(container.end)
-                    start.linkTo(chair1.end)
+                    bottom.linkTo(container.bottom)
+                    end.linkTo(container.end,margin = 20.dp)
                 }
                 .clickable {
                     chair2Color = when (chair2Color) {
